@@ -10,13 +10,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'python --version'
+                bat '"C:\\Users\\Jovan Paes\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe" --version'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'python -m unittest -v test_calculator.py'
+                bat '"C:\\Users\\Jovan Paes\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe" -m unittest -v test_calculator.py'
             }
         }
     }
