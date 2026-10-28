@@ -4,19 +4,22 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                echo 'Checking out source code'
                 checkout scm
             }
         }
 
         stage('Build') {
             steps {
-                bat '"C:\\Users\\Jovan Paes\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe" --version'
+                echo 'Building calculator project'
+                sh 'python3 -m py_compile calculator.py'
             }
         }
 
         stage('Test') {
             steps {
-                bat '"C:\\Users\\Jovan Paes\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe" -m unittest -v test_calculator.py'
+                echo 'Testing calculator project'
+                sh 'python3 -m unittest'
             }
         }
     }
