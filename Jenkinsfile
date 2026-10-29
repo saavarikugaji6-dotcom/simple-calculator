@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Test Calculator') {
             steps {
-                bat 'python -m unittest test_calculator.py'
+                bat '"C:\\Users\\joanp\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m unittest test_calculator.py'
             }
         }
 
         stage('Run Calculator') {
             steps {
-                bat 'python calculator.py'
+                bat '"C:\\Users\\joanp\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" calculator.py'
             }
         }
     }
