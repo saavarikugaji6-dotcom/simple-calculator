@@ -2,21 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Test Calculator') {
             steps {
-                checkout scm
+                bat 'python -m unittest test_calculator.py'
             }
         }
 
-        stage('Build') {
+        stage('Run Calculator') {
             steps {
-                bat 'python --version'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                bat 'python -m unittest -v test_calculator.py'
+                bat 'python calculator.py'
             }
         }
     }
